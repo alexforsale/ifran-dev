@@ -1,0 +1,21 @@
+/* -*-css -*- */
+@theme "custom"
+
+window {
+    location: northeast;
+    anchor:   center;
+    transparency: "screenshot";
+    width: 15%;
+    padding: 10px;
+    border:  0px;
+    border-radius: 6px;
+    x-offset: -7.5%;
+    y-offset: 12.5%;
+    spacing: 0;
+    children: [mainbox];
+}
+
+listview {
+    columns: 1;
+    lines: 4;
+}
