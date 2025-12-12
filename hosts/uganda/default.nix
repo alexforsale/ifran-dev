@@ -32,15 +32,15 @@
   stylix = {
     enable = true;
     cursor = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
-      size = 24;
+      name = "Nordzy-catppuccin-frappe-dark";
+      package = pkgs.nordzy-cursor-theme;
+      size = 32;
     };
     icons = {
       enable = true;
-      dark = "Papirus-Dark";
-      light = "Papirus-Light";
-      package = pkgs.papirus-nord;
+      dark = "Nordzy-purple-dark";
+      light = "Nordzy-purple";
+      package = pkgs.nordzy-icon-theme;
     };
     targets = {
       console = {
@@ -65,6 +65,27 @@
         enable = true;
         image.enable = true;
         useWallpaper = false;
+      };
+    };
+  };
+  services.xserver.displayManager.lightdm = {
+    enable = true;
+    greeters = {
+      gtk = {
+        enable = true;
+        theme = {
+          name = "Nordic";
+          package = pkgs.nordic;
+        };
+        iconTheme = {
+          name = "Nordzy-purple-dark";
+          package = pkgs.nordzy-icon-theme;
+        };
+        cursorTheme = {
+          name = "Nordzy-catppuccin-frappe-dark";
+          package = pkgs.nordzy-cursor-theme;
+          size = 32;
+        };
       };
     };
   };
