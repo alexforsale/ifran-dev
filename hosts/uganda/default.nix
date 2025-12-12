@@ -28,29 +28,43 @@
       nerd-fonts.symbols-only
     ];
   };
-  stylix.targets = {
-    console = {
-      enable = true;
-      colors.enable = true;
+  stylix = {
+    enable = true;
+    cursor = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 24;
     };
-    font-packages = {
+    icons = {
       enable = true;
-      fonts.enable = true;
+      dark = "Papirus-Dark";
+      light = "Papirus-Light";
+      package = pkgs.papirus-nord;
     };
-    fontconfig = {
-      enable = true;
-      fonts.enable = true;
-    };
-    grub = {
-      enable = true;
-    };
-    gtk = {
-      enable = true;
-    };
-    lightdm = {
-      enable = true;
-      image.enable = true;
-      useWallpaper = false;
+    targets = {
+      console = {
+        enable = true;
+        colors.enable = true;
+      };
+      font-packages = {
+        enable = true;
+        fonts.enable = true;
+      };
+      fontconfig = {
+        enable = true;
+        fonts.enable = true;
+      };
+      grub = {
+        enable = true;
+      };
+      gtk = {
+        enable = true;
+      };
+      lightdm = {
+        enable = true;
+        image.enable = true;
+        useWallpaper = false;
+      };
     };
   };
 }

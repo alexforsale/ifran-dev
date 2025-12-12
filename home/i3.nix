@@ -727,10 +727,10 @@
 
   gtk = {
     enable = true;
-    iconTheme.name = "Papirus-Dark";
-    iconTheme.package = pkgs.papirus-nord;
-    cursorTheme.name = "Bibata-Modern-Ice";
-    cursorTheme.package = pkgs.bibata-cursors;
+    #iconTheme.name = "Papirus-Dark";
+    #iconTheme.package = pkgs.papirus-nord;
+    #cursorTheme.name = "Bibata-Modern-Ice";
+    #cursorTheme.package = pkgs.bibata-cursors;
   };
 
   home.packages = with pkgs; [
