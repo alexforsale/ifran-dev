@@ -19,11 +19,6 @@
           notification = false;
         }
         {
-          command = "sleep 3 && volumeicon";
-          always = true;
-          notification = false;
-        }
-        {
           command = "flameshot";
           always = true;
         }
@@ -738,7 +733,6 @@
     pwvucontrol
     playerctl
     flameshot
-    volumeicon
     brightnessctl
     networkmanagerapplet
     haskellPackages.greenclip
