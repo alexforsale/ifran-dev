@@ -1844,6 +1844,34 @@
 (use-package consult-lsp)
 (use-package consult-flycheck)
 (use-package nerd-icons)
+
+(use-package vterm
+  :demand t
+  :commands vterm-mode
+  :config
+  (with-eval-after-load 'evil-collection
+    (evil-collection-vterm-setup))
+  (add-hook 'vterm-mode-hook
+            (lambda ()
+              (setq-local global-hl-line-mode nil)
+              (setq-local hscroll-margin 0)))
+  (setq vterm-kill-buffer-on-exit t)
+  (evil-set-initial-state #'vterm-mode 'insert))
+
+(use-package multi-vterm
+  :after vterm
+  :ensure t
+  :config
+  (setopt multi-vterm-dedicated-window-height-percent 20))
+
+(use-package indent-bars
+  :custom
+  (indent-bars-no-descend-lists t)
+  (indent-bars-treesit-support t)
+  (indent-bars-treesit-ignore-blank-lines-types '("module"))
+  (indent-bars-treesit-scope '((python function_definition class_definition for_statement
+	  if_statement with_statement while_statement)))
+  :hook (prog-mode . indent-bars-mode))
     '';
     extraPackages = epkgs: with epkgs; [ 
       org-contrib
@@ -1911,6 +1939,9 @@
       consult-lsp
       consult-flycheck
       nerd-icons
+      vterm
+      multi-vterm
+      indent-bars
     ];
   };
 
