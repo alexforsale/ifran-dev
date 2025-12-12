@@ -5,8 +5,9 @@
   imports = [
     ./hardware-configuration.nix
     ../common
-    ../common/zerotier.nix
-    ../common/bluetooth.nix
+    ../modules/zerotier.nix
+    ../modules/bluetooth.nix
+    ../modules/nord.nix
     ../../home
   ];
   networking.hostName = "kenya";
