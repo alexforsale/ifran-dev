@@ -1843,6 +1843,7 @@
 (use-package flycheck)
 (use-package consult-lsp)
 (use-package consult-flycheck)
+(use-package nerd-icons)
     '';
     extraPackages = epkgs: with epkgs; [ 
       org-contrib
@@ -1909,6 +1910,7 @@
       flycheck
       consult-lsp
       consult-flycheck
+      nerd-icons
     ];
   };
 
