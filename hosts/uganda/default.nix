@@ -16,6 +16,7 @@
   networking.hostName = "uganda";
   xdg.portal.extraPortals = [
     pkgs.kdePackages.xdg-desktop-portal-kde
+    pkgs.xdg-desktop-portal-gtk
   ];
   fonts = {
     fontDir.enable = true;

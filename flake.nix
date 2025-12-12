@@ -51,6 +51,25 @@
           }
         ];
       };
+      kenya = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit user fullName inputs outputs;
+          hostName = "kenya";
+        };
+        modules = [
+          stylix.nixosModules.stylix
+          ./hosts/kenya
+
+          home-manager.nixosModules.home-manager {
+            home-manager = {
+              useUserPackages = true;
+              extraSpecialArgs = {inherit inputs;};
+              users.${user}.imports = [];
+              backupFileExtension = "hm-backup";
+            };
+          }
+        ];
+      };
     };
   };
 }

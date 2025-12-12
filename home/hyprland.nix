@@ -3,7 +3,7 @@
   ...
 }:
 {
-# TODO: hyprpaper
+  # TODO: hyprpaper
   wayland = {
     windowManager = {
       hyprland = {
