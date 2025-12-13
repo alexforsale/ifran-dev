@@ -632,7 +632,7 @@
 
   services.screen-locker = {
     enable = true;
-    extraOptions = [
+    xss-lock.extraOptions = [
       "--transfer-sleep-lock"
     ];
     lockCmd = "i3lock-fancy-rapid 1 pixel";
