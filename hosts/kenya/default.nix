@@ -8,7 +8,7 @@
     ../modules/desktop.nix
     ../modules/zerotier.nix
     ../modules/bluetooth.nix
-    ../modules/nord.nix
+    ../modules/solarized-dark.nix
     ../../home
   ];
   networking.hostName = "kenya";
@@ -77,15 +77,15 @@
   stylix = {
     enable = true;
     cursor = {
-      name = "Bibata-Modern-Ice";
-      package = pkgs.bibata-cursors;
+      name = "Vimix-cursors";
+      package = pkgs.vimix-cursors;
       size = 24;
     };
     icons = {
       enable = true;
-      dark = "Papirus-Dark";
-      light = "Papirus-Light";
-      package = pkgs.papirus-nord;
+      dark = "Vimix-Doder";
+      light = "Vimix-Doder";
+      package = pkgs.vimix-icon-theme;
     };
     targets = {
       console = {
