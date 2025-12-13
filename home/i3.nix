@@ -632,7 +632,9 @@
 
   services.screen-locker = {
     enable = true;
-    #inactiveInterval = 2;
+    extraOptions = [
+      "--transfer-sleep-lock"
+    ];
     lockCmd = "i3lock-fancy-rapid 1 pixel";
   };
 
@@ -751,5 +753,6 @@
     pinentry-qt
     tesseract4
     maim
+    quodlibet-full
   ];
 }
