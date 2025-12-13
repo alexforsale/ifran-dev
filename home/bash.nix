@@ -65,6 +65,7 @@
 
     [[ "$(command -v zoxide)" ]] && eval "$(zoxide init --cmd cd bash)"
     [[ -f ~/.cargo/env ]] && source ~/.cargo/env
+    . ${pkgs.pass.extensions.pass-otp}/share/bash-completion/completions/pass-otp
     '';
   };
   home.packages = with pkgs; [
