@@ -5,6 +5,7 @@
   imports = [
     ./hardware-configuration.nix
     ../common
+    ../modules/desktop.nix
     ../modules/zerotier.nix
     ../modules/i3.nix
     ../modules/thunar.nix
