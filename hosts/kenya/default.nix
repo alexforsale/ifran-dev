@@ -8,6 +8,7 @@
     ../modules/desktop.nix
     ../modules/zerotier.nix
     ../modules/bluetooth.nix
+    ../modules/thunar.nix
     ../modules/solarized-dark.nix
     ../../home
   ];
@@ -113,6 +114,7 @@
       };
     };
   };
+
   environment.systemPackages = with pkgs; [
     catppuccin-sddm-corners
   ];

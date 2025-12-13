@@ -115,7 +115,7 @@
             "$mainMod Shift, return, exec, alacritty -e tmux new -A -s main"
             "$mainMod, d, exec, wofi --show drun"
             "$mainMod, v, exec, wofi pwvucontrol"
-            "$mainMod, e, exec, dolphin"
+            "$mainMod, e, exec, thunar"
             "$mainMod, q, exec, wofi-power-menu"
             "$mainMod, Comma, exec, wofi-emoji"
             "$mainMod Shift, t, exec, ${./scripts/hypr-tesseract.sh}"
@@ -493,7 +493,6 @@
     wofi-power-menu
     wl-clipboard
     cliphist
-    kdePackages.dolphin
     tesseract4
     grim
     slurp
