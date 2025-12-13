@@ -124,7 +124,7 @@
             "$mainMod Alt, n, exec, emacsclient -c -a 'emacs'"
             "$mainMod Alt, q, exec, hyprlock"
             "$mainMod Alt, p, exec, wofi-pass"
-            "$mainMod, C, exec, cliphist list | wofi -dmenu -p \"Clipboard:\" | cliphist decode | wl-copy"
+            "$mainMod, C, exec, cliphist list | wofi -l top_left -d -p \"Clipboard:\" | cliphist decode | wl-copy"
             "$mainMod, F4, killactive"
             "Alt, F4, killactive"
             "$mainMod, left, movefocus, l"
@@ -197,14 +197,14 @@
             "$mainMod Control, H, resizeactive, -10 0"
             "$mainMod Control, J, resizeactive, 0 10"
             "$mainMod Control, K, resizeactive, 0 -10"
-            "$mainMod Control, L, resizeactive, 10"
+            "$mainMod Control, L, resizeactive, 10 0"
 
             "$mainMod Control, left, resizeactive, -10 0"
             "$mainMod Control, down, resizeactive, 0 10"
             "$mainMod Control, up, resizeactive, 0 -10"
-            "$mainMod Control, right, resizeactive, 10"
+            "$mainMod Control, right, resizeactive, 10 0"
 
-            "$mainMod, underscore, splitratio, -0.1"
+            "$mainMod, Minus, splitratio, -0.1"
             "$mainMod, Equal, splitratio, 0.1"
             "$mainMod, Semicolon, splitratio, -0.1"
             "$mainMod, Apostrophe, splitratio, 0.1"
@@ -213,6 +213,9 @@
             "$mainMod Control, minus, exec, ${./scripts/hypr-zoom.sh} up"
             "$mainMod Control, KP_ADD, exec, ${./scripts/hypr-zoom.sh} down"
             "$mainMod Control, KP_SUBTRACT, exec, ${./scripts/hypr-zoom.sh} up"
+
+            "$mainMod, F2, exec, ${./scripts/hypr-set-opacity.sh} --decrease"
+            "$mainMod, F3, exec, ${./scripts/hypr-set-opacity.sh} --increase"
           ];
           bindel = [
             "$mainMod, F11, exec, playerctl play-pause"
@@ -226,59 +229,6 @@
           ];
         };
         extraConfig = ''
-         bind = $mainMod, bracketleft, changegroupactive, b
-         bind = $mainMod, bracketright, changegroupactive, f
-         
-         bind = $mainMod, T, togglegroup
-         
-         bind = $mainMod, G, submap, group
-         submap = group
-         bind = , T, togglegroup
-         bind = $mainMod Control, F, changegroupactive, f
-         bind = $mainMod Control, B, changegroupactive, b
-         
-         bind = $mainMod, bracketleft, changegroupactive, b
-         bind = $mainMod, bracketright, changegroupactive, f
-         # bind = $mainMod Alt, L, lockactivegroup
-         bind = $mainMod, G, lockgroups, toggle
-         bind = $mainMod Alt, G, lockactivegroup, toggle
-         
-         bind = $mainMod Shift, left, moveintogroup, l
-         bind = $mainMod Shift, right, moveintogroup, r
-         bind = $mainMod Shift, up, moveintogroup, u
-         bind = $mainMod Shift, down, moveintogroup, d
-         
-         bind = $mainMod Shift, H, moveintogroup, l
-         bind = $mainMod Shift, L, moveintogroup, r
-         bind = $mainMod Shift, K, moveintogroup, u
-         bind = $mainMod Shift, J, moveintogroup, d
-         
-         bind = $mainMod Control, left, moveoutofgroup, l
-         bind = $mainMod Control, right, moveoutofgroup, r
-         bind = $mainMod Control, up, moveoutofgroup, u
-         bind = $mainMod Control, down, moveoutofgroup, d
-         
-         bind = $mainMod Control, H, moveoutofgroup, l
-         bind = $mainMod Control, L, moveoutofgroup, r
-         bind = $mainMod Control, K, moveoutofgroup, u
-         bind = $mainMod Control, J, moveoutofgroup, d
-         
-         bind = $mainMod, left, movefocus, l
-         bind = $mainMod, right, movefocus, r
-         bind = $mainMod, up, movefocus, u
-         bind = $mainMod, down, movefocus, d
-         
-         bind = $mainMod, H, movefocus, l
-         bind = $mainMod, L, movefocus, r
-         bind = $mainMod, K, movefocus, u
-         bind = $mainMod, J, movefocus, d
-         
-         bind = , escape, submap, reset
-         bind = Control, G, submap, reset
-         submap = reset
-         
-         bind = $mainMod Control, F, changegroupactive, f
-         bind = $mainMod Control, B, changegroupactive, b 
         '';
       };
     };
