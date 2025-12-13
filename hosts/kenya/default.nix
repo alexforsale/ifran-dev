@@ -71,7 +71,8 @@
     enable = true;
     wayland.enable = true;
     autoNumlock = true;
-  };
+    theme = "catppuccin-sddm-corners";
+ };
 
   stylix = {
     enable = true;
@@ -112,4 +113,7 @@
       };
     };
   };
+  environment.systemPackages = with pkgs; [
+    catppuccin-sddm-corners
+  ];
 }
