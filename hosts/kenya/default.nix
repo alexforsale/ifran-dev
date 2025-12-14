@@ -85,9 +85,9 @@
     };
     icons = {
       enable = true;
-      dark = "Vimix-Doder";
-      light = "Vimix-Doder";
-      package = pkgs.vimix-icon-theme;
+      dark = "Papirus-Dark-Maia";
+      light = "Papirus-Light-Maia";
+      package = pkgs.papirus-maia-icon-theme;
     };
     targets = {
       console = {
