@@ -222,10 +222,65 @@
             "$mainMod, F12, exec, playerctl next"
             "$mainMod, F10, exec, playerctl previous"
           ];
+
           exec-once = [
             "systemctl --user start hyprpolkitagent"
             "wl-paste --type text --watch cliphist store &"
             "wl-paste --type image --watch cliphist store &"
+          ];
+
+          windowrule = [
+            "noblur, class:.*"
+            "suppressevent maximize, class:.*"
+            "opacity 0.99, class:.*"
+            "float, size 50%, class:^(com.saivert.pwvucontrol)$"
+            "float, size 50%, class:^(hyprpolkitagent)$"
+            "float, size 50%, class:(.*)(blueman)(.*), initialTitle:Bluetooth Devices"
+
+            "workspace 4, class:(thunderbird)"
+            "float, class:(thunderbird),title:(.*)(Reminders)"
+            "float, class:(Msgcompose)(.*)"
+            "float, class:(thunderbird),title:(Inbox)(.*)"
+            "float, class:(thunderbird),title:(Send)(.*)"
+            "float, class:(thunderbird),title:(Write)(.*)"
+            "float, class:(thunderbird),title:(status)"
+
+            "idleinhibit always, class:firefox title:(.*)(- YouTube)"
+            "opacity 1, class:firefox title:(.*)(- YouTube)"
+
+            "float, class:(org.gnome.FileRoller)"
+            "float, title:(Compress)"
+
+            "float, workspace 8, class:(org.remmina.Remmina)"
+
+            "workspace 8, class:(transmission)(.*)"
+            "float,title:(Torrent)(.*)"
+
+            "float,title:(Open Images)"
+            "float,title:(Create new document)"
+            "float,title:^(Select a File)(.*)"
+            "float,title:^(Choose wallpaper)(.*)"
+            "float,title:^(Open Folder)(.*)"
+            "float,title:^(Save As)(.*)"
+            "float,title:^(Library)(.*)"
+            "float,title:^(File Upload)(.*)"
+            "float, title:(Rename.*)"
+            "float, title:(File Operation Progress)"
+            "float, class:(thunar),title:(Confirm to replace files)"
+          ];
+
+          layerrule = [
+            "blur,ashell-main-layer"
+            "blur,launcher"
+            "blur,gtk-layer-shell"
+            "xray 1,ashell-main-layer"
+            "xray 1,gtk-layer-shell"
+            "ignorezero, gtk-layer-shell"
+            "ignorezero, ashell-main-layer"
+            "animation fade,~nwggrid"
+            "animation popin 80%, ashell-main-layer"
+            "order 66,ashell-main-layer"
+            "abovelock 2,ashell-main-layer"
           ];
         };
         extraConfig = ''
