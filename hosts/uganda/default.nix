@@ -15,10 +15,16 @@
     ../../home
   ];
   networking.hostName = "uganda";
-  xdg.portal.extraPortals = [
-    pkgs.kdePackages.xdg-desktop-portal-kde
-    pkgs.xdg-desktop-portal-gtk
-  ];
+  xdg = {
+    portal = {
+      extraPortals = [
+        pkgs.kdePackages.xdg-desktop-portal-kde
+        pkgs.xdg-desktop-portal-gtk
+      ];
+      xdgOpenUsePortal = true;
+    };
+  };
+
   fonts = {
     fontDir.enable = true;
     fontconfig.useEmbeddedBitmaps = true;

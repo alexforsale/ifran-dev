@@ -431,6 +431,12 @@
     enable = true;
   };
 
+  home.sessionVariables = {
+    ELECTRON_OZONE_PLATFORM_HINT = "wayland";
+    QT_QPA_PLATFORM = "wayland;xcb";
+    GTK_USE_PORTALS = 1;
+  };
+
   home.packages = with pkgs; [
     thunderbird
     hyprland-qt-support
@@ -438,22 +444,16 @@
     hyprpicker
     hyprprop
     hyprpolkitagent
-    pwvucontrol
     wofi-pass
     wofi-emoji
     wofi-power-menu
     wl-clipboard
     cliphist
-    tesseract4
     grim
     slurp
-    playerctl
     sway-contrib.grimshot
     wf-recorder
     jq
     bc
-    libnotify
-    quodlibet-full
-    networkmanagerapplet
   ];
 }

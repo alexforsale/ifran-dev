@@ -732,27 +732,19 @@
 
   home.packages = with pkgs; [
     font-awesome
-    pwvucontrol
-    playerctl
     flameshot
     brightnessctl
-    networkmanagerapplet
     haskellPackages.greenclip
     screenkey
-    libnotify
     rofi-power-menu
     paper-icon-theme
     xorg.xprop
     cheese
     xorg.xev
-    thunderbird
     xclip
-    ffmpeg_7-full
     libcanberra-gtk3
     pamixer
     pinentry-qt
-    tesseract4
     maim
-    quodlibet-full
   ];
 }

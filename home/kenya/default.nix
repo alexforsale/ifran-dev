@@ -1,8 +1,8 @@
 {
-  pkgs,
   ...
 } : {
   imports = [
+    ../desktop.nix
     ../bash.nix
     ../nvim.nix
     ../tmux.nix
@@ -10,14 +10,6 @@
     ../hyprland.nix
     ../alacritty.nix
   ];
-  home.packages = with pkgs; [
-    remmina
-  ];
-
-  services.syncthing = {
-    enable = true;
-  };
-
   stylix.targets = {
     alacritty = {
       enable = true;
