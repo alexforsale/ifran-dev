@@ -17,7 +17,7 @@
     isNormalUser = true;
     description = "${fullName}";
     # hashedPasswordFile = config.sops.secrets.alexforsale_passwd.path;
-    extraGroups = [ "wheel" "networkmanager" "video" "audio" "lp" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "audio" "lp" "jackaudio" ];
     packages = with pkgs; [
       tree
     ];

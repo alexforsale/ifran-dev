@@ -27,13 +27,30 @@
     pkgs.passff-host
   ];
   environment.systemPackages = with pkgs; [
+    discord
     gnome-software
+    gimp-with-plugins
     vdhcoapp
     libreoffice-qt
     hunspell
     hunspellDicts.en_US
     hunspellDicts.id_ID
     hyphen
+    spotify
     hyphenDicts.en_US
+    zathura
+    telegram-desktop
+    transmission_4-gtk
+    wineWowPackages.stable
   ];
+  services.deluge = {
+    enable = true;
+    web.enable = true;
+  };
+
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+  };
 }

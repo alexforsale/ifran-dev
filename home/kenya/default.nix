@@ -13,7 +13,11 @@
   home.packages = with pkgs; [
     remmina
   ];
-  services.syncthing.enable = true;
+
+  services.syncthing = {
+    enable = true;
+  };
+
   stylix.targets = {
     alacritty = {
       enable = true;

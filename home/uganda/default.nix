@@ -13,7 +13,11 @@
   home.packages = with pkgs; [
     remmina
   ];
-  services.syncthing.enable = true;
+
+  services.syncthing = {
+    enable = true;
+  };
+
   xsession.windowManager.i3.config.terminal = "alacritty";
   stylix.targets = {
     alacritty = {

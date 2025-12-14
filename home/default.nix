@@ -25,6 +25,31 @@
     home.homeDirectory = "/home/${user}";
     home.stateVersion = "25.11";
 
+    programs.fzf = {
+      enable = true;
+      enableBashIntegration = true;
+      tmux = {
+        enableShellIntegration = true;
+      };
+    };
+
+    programs.ssh = {
+      enable = true;
+      enableDefaultConfig = false;
+      matchBlocks."*" = {
+        forwardAgent = false;
+        addKeysToAgent = "no";
+        compression = false;
+        serverAliveInterval = 0;
+        serverAliveCountMax = 3;
+        hashKnownHosts = false;
+        userKnownHostsFile = "~/.ssh/known_hosts";
+        controlMaster = "no";
+        controlPath = "~/.ssh/master-%r@%n:%p";
+        controlPersist = "no";
+      };
+    };
+
     programs.git = {
       enable = true;
       settings = {
@@ -37,6 +62,9 @@
         color = {
           ui = true;
         };
+        credential = {
+          helper = "!pass-git-helper $@";
+        };
         difftool = {
           prompt = true;
         };
@@ -46,11 +74,28 @@
         difttool."nvimdiff" = {
           cmd = "nvim -d \"$LOCAL\" \"$REMOTE\"";
         };
+        merge = {
+          tool = "nvim";
+        };
+        mergetool."nvim" = {
+          cmd = "nvim -d -c \"wincmd l\" \"$LOCAL\" \"$MERGED\" \"$REMOTE\"";
+          keepBackup = false;
+        };
         init = {
           defaultBranch = "main";
         };
+        pack = {
+          windowMemory = "2g";
+          packSizeLimit = "1g";
+        };
+        pull = {
+          rebase = true;
+        };
         push = {
           default = "simple";
+        };
+        tag = {
+          gpgSign = true;
         };
         user = {
           name = "alexforsale";
@@ -59,5 +104,36 @@
         };
       };
     };
+
+    programs.mpv = {
+      enable = true;
+
+      package = (
+        pkgs.mpv-unwrapped.wrapper {
+          scripts = with pkgs.mpvScripts; [
+            uosc
+            sponsorblock
+            youtube-upnext
+            youtube-chat
+            thumbnail
+            mpv-notify-send
+            mpv-cheatsheet
+            mpris
+            autosubsync-mpv
+            autosub
+          ];
+
+          mpv = pkgs.mpv-unwrapped.override {
+            waylandSupport = true;
+            ffmpeg = pkgs.ffmpeg-full;
+          };
+        }
+      );
+
+    };
+
+    home.packages = with pkgs; [
+      pass-git-helper
+    ];
   };
 }
