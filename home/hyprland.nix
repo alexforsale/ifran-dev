@@ -350,7 +350,7 @@
     systemd.enable = true;
     settings = {
       appearance = {
-        style = "Gradient";
+        style = "Solid";
       };
       outputs = "Active";
       position = "Top";
