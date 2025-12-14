@@ -144,5 +144,15 @@
       enable = true;
     };
 
+    home.file = {
+      ".config/qt5ct/colors/oomox-current.conf".source = config.lib.stylix.colors {
+        template = builtins.readFile ./scripts/oomox-current.conf.mustache;
+        extension = ".conf";
+      };
+      ".config/Trolltech.conf".source = config.lib.stylix.colors {
+        template = builtins.readFile ./scripts/Trolltech.conf.mustache;
+        extension = ".conf";
+      };
+    };
   };
 }

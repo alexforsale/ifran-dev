@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   ...
 } : {
@@ -17,13 +18,19 @@
         name = "UbuntuMono Nerd Font";
       };
       emoji = {
-        package = pkgs.noto-fonts-color-emoji;
-        name = "Noto Color Emoji";
+        package = pkgs.twitter-color-emoji;
+        name = "Twitter Color Emoji";
       };
     };
     image = pkgs.fetchurl {
-      url = "https://getwallpapers.com/wallpaper/full/c/3/2/574046.jpg";
-      hash = "sha256-0gGOY2Mje1r1MPxLAZT2iQNfxq4EFRQfHG1fB9nuzCE=";
+      url = "https://r4.wallpaperflare.com/wallpaper/474/140/1011/stars-sea-clouds-night-wallpaper-7bede9caa0ccfc6d8a1eb0759c9972b0.jpg";
+      hash = "sha256-ugnjfKCIpyH0enWB5l52j+1pWG1FwX8X5BeRh68NRuE=";
     };
+  };
+
+  fonts.fontconfig.defaultFonts = {
+    monospace = [ config.stylix.fonts.monospace.name ];
+    sansSerif = [ config.stylix.fonts.sansSerif.name ];
+    serif = [ config.stylix.fonts.serif.name ];
   };
 }
