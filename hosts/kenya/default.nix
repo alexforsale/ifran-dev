@@ -116,6 +116,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    lact
     catppuccin-sddm-corners
   ];
 }
