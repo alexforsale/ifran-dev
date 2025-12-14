@@ -35,10 +35,10 @@
     vim
     pinentry-curses
     git
-    pciutils
     htop
     usbutils
     pciutils
+    file
     (pkgs.pass.withExtensions (exts: [exts.pass-otp]))
   ];
 

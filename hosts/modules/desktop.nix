@@ -29,5 +29,11 @@
   environment.systemPackages = with pkgs; [
     gnome-software
     vdhcoapp
+    libreoffice-qt
+    hunspell
+    hunspellDicts.en_US
+    hunspellDicts.id_ID
+    hyphen
+    hyphenDicts.en_US
   ];
 }
