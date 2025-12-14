@@ -436,6 +436,7 @@
     hyprland-qt-support
     hyprsysteminfo
     hyprpicker
+    hyprprop
     hyprpolkitagent
     pwvucontrol
     wofi-pass
